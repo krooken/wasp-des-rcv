@@ -1,3 +1,23 @@
 # Spin files
 **/*.trail
-**/pan.*
+**/pan*
+**/_spin_nvr.tmp
+**/*.pml.*_sim.out
+
+# Eclipse project files
+.metadata/**/*
+
+# Simulink files
+**/slprj/**
+/SupervisoryPathController.d
+/SupervisoryPathController.dbg
+/SupervisoryPathController.fsm
+/SupervisoryPathController.spd
+**/SupervisorCodez.zip
+
+# Matlab files
+**/*.asv
+**/local_setup.m
+
+# Forget about the article
+/Article/**/*

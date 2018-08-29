@@ -1,0 +1,4740 @@
+Model {
+  Name			  "SupervisorStateMachine"
+  Version		  8.9
+  SavedCharacterEncoding  "windows-1252"
+  GraphicalInterface {
+    NumRootInports	    17
+    Inport {
+      Name		      "goal_received"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "received_new_goal"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "spp_success"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "unstructuredAreaStartExists"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "unstructuredAreaEndExists"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "upp_success"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "ego_pose_init"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "odom_init"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "dist_to_pose_threshold"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "dist_to_goal"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "ego_velocity"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "zero_speed"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "dist_to_tp2"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "dist_to_tp_threshold"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "dist_to_tp1"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "nr_available_safe_paths"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    Inport {
+      Name		      "gps_status"
+      BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
+    }
+    NumRootOutports	    12
+    Outport {
+      Name		      "local_planner_activate"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "local_planner_activate"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "spp_call"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "spp_call"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "tp1_assign"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "tp1_assign"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "tp2_assign"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "tp2_assign"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "upp_call"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "upp_call"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "path_publish"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "path_publish"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "stitch_mode"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "stitch_mode"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "upp_arg1"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "upp_arg1"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "upp_arg2"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "upp_arg2"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "ref_controller_mode"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "ref_controller_mode"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "high_state"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "high_state"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "state"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      SignalName	      "state"
+      UnitExpr		      "inherit"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.75"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+    NumResetEvents	    0
+    HasInitializeEvent	    0
+    HasTerminateEvent	    0
+    IsExportFunctionModel   0
+    NumParameterArguments   0
+    OrderedModelArguments   1
+  }
+  LogicAnalyzerGraphicalSettings ""
+  LogicAnalyzerPlugin	  "on"
+  LogicAnalyzerSignalOrdering ""
+  DiagnosticSuppressor	  "on"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
+  SLCCPlugin		  "on"
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1558.0, 872.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-53.125, 318.22500160336494]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "StateflowChart"
+	  LoadSaveID		  "15"
+	  Extents		  [1558.0, 872.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [688.840857536034, 1275.730792185384]
+	}
+	PropName		"EditorsInfo"
+      }
+      Array {
+	Type			"Simulink.DockComponentInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  7
+	  Type			  "GLUE2:DDG Component"
+	  ID			  "SymbolManager"
+	  Visible		  [0]
+	  CreateCallback	  "Stateflow.Interface.Panel.createSymbolManagerComponent"
+	  UserData		  "0"
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [316]
+	  Height		  [253]
+	}
+	Object {
+	  $ObjectID		  8
+	  Type			  "GLUE2:PropertyInspector"
+	  ID			  "Property Inspector"
+	  Visible		  [1]
+	  CreateCallback	  ""
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [316]
+	  Height		  [904]
+	}
+	PropName		"DockComponentsInfo"
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAFAAAADpPwCA"
+      "AAAAvsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
+      "QBjAHQAbwByAQAAAEAAAAOkAAAAiwD////7AAAAQgBHAEwAVQBFADIAOgBEAEQARwAgAEMAbwBtAHAAbwBuAGUAbgB0AC8AUwB5AG0AYgBvAGwAT"
+      "QBhAG4AYQBnAGUAcgAAAALNAAABFwAAAB4A////AAAGPAAAA6QAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAA"
+      "AAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAA"
+      "AAAAP////8BAAAAef////8AAAAAAAAAAP////8BAAAA2v////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAABU/////8AAAAAA"
+      "AAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAADK/////8AAAAAA"
+      "AAAAP////8BAAADWv////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
+    }
+  }
+  HideAutomaticNames	  on
+  Created		  "Thu Nov 23 09:31:04 2017"
+  Creator		  "yuchao"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "jonkro"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Apr 04 14:45:08 2018"
+  RTWModifiedTimeStamp	  444753902
+  ModelVersionFormat	  "1.%<AutoIncrement:75>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  VariantCondition	  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  VisualizeLoggedSignalsWhenLoggingToFile off
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    9
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "SupervisorStateMachine"
+    overrideMode_	    [0.0]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "SupervisorStateMachine"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      10
+      Version		      "1.17.0"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  11
+	  Version		  "1.17.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  off
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  on
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  12
+	  Version		  "1.17.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Structure"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  13
+	  Version		  "1.17.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "on"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "auto"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  14
+	  Version		  "1.17.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "UseOnlyExistingSharedCode"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "error"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "error"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "error"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "warning"
+	  SFMachineParentedDataDiag "warning"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  UnitDatabase		  ""
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  15
+	  Version		  "1.17.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  64
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdBitPerSizeT	  64
+	  ProdBitPerPtrDiffT	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Intel->x86-64 (Linux 64)"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  16
+	  Version		  "1.17.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel on
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  17
+	  Version		  "1.17.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  on
+	  MATLABDynamicMemAllocThreshold 65536
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  18
+	  Version		  "1.17.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    13
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  TLCOptions		  ""
+	  GenCodeOnly		  on
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts on
+	  PackageName		  "SupervisorCodez"
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  on
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomLAPACKCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Microsoft Windows SDK v7.1 | nmake (64-bit Windows)"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  on
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C++"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      19
+	      Version		      "1.17.0"
+	      Array {
+		Type			"Cell"
+		Dimension		27
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      20
+	      Version		      "1.17.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"ExistingSharedCode"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"RemoveResetFunc"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"RemoveDisableFunc"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Array {
+		Type			"Handle"
+		Dimension		1
+		Simulink.CPPComponent {
+		  $ObjectID		  21
+		  Version		  "1.17.0"
+		  Array {
+		    Type		    "Cell"
+		    Dimension		    10
+		    Cell		    "Description"
+		    Cell		    "Components"
+		    Cell		    "Name"
+		    Cell		    "GenerateDestructor"
+		    Cell		    "GenerateExternalIOAccessMethods"
+		    Cell		    "ParameterMemberVisibility"
+		    Cell		    "InternalMemberVisibility"
+		    Cell		    "GenerateParameterAccessMethods"
+		    Cell		    "GenerateInternalMemberAccessMethods"
+		    Cell		    "UseOperatorNewForModelRefRegistration"
+		    PropName		    "DisabledProps"
+		  }
+		  Description		  ""
+		  Name			  "CPPClassGenComp"
+		  GenerateDestructor	  on
+		  GenerateExternalIOAccessMethods "None"
+		  ParameterMemberVisibility "private"
+		  InternalMemberVisibility "private"
+		  GenerateParameterAccessMethods "None"
+		  GenerateInternalMemberAccessMethods "None"
+		  UseOperatorNewForModelRefRegistration	off
+		}
+		PropName		"Components"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C++03 (ISO)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Use local settings"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      off
+	      MultiInstanceERTCode    on
+	      CodeInterfacePackaging  "C++ class"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      off
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeMexArgs	      ""
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  22
+	  Version		  "1.17.0"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dwe"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  off
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar off
+	  CovSaveSingleToWorkspaceVar off
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovShowResultsExplorer  on
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  on
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      ExtraOptions	      "-aIgnoreTestpoints=0 "
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition    [ 2219, 151, 3209, 821 ]
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    10
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    23
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      EnsureOutportIsVirtual  off
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+      MustResolveToSignalObject	off
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      GeneratePreprocessorConditionals off
+      PropagateVariantConditions off
+      TreatAsGroupedWhenPropagatingVariantConditions on
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "SupervisorStateMachine"
+    Location		    [-8, -8, 1928, 1048]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "49"
+    Block {
+      BlockType		      Inport
+      Name		      "goal_received"
+      SID		      "20"
+      Position		      [25, 423, 55, 437]
+      ZOrder		      35
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "received_new_goal"
+      SID		      "21"
+      Position		      [25, 468, 55, 482]
+      ZOrder		      36
+      Port		      "2"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "spp_success"
+      SID		      "22"
+      Position		      [25, 513, 55, 527]
+      ZOrder		      38
+      Port		      "3"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "unstructuredAreaStartExists"
+      SID		      "23"
+      Position		      [25, 558, 55, 572]
+      ZOrder		      39
+      Port		      "4"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "unstructuredAreaEndExists"
+      SID		      "24"
+      Position		      [25, 603, 55, 617]
+      ZOrder		      37
+      Port		      "5"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "upp_success"
+      SID		      "25"
+      Position		      [25, 648, 55, 662]
+      ZOrder		      40
+      Port		      "6"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "ego_pose_init"
+      SID		      "26"
+      Position		      [25, 693, 55, 707]
+      ZOrder		      41
+      Port		      "7"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "odom_init"
+      SID		      "27"
+      Position		      [25, 738, 55, 752]
+      ZOrder		      42
+      Port		      "8"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "dist_to_pose_threshold"
+      SID		      "28"
+      Position		      [25, 783, 55, 797]
+      ZOrder		      43
+      Port		      "9"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "dist_to_goal"
+      SID		      "29"
+      Position		      [25, 828, 55, 842]
+      ZOrder		      45
+      Port		      "10"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "ego_velocity"
+      SID		      "30"
+      Position		      [25, 873, 55, 887]
+      ZOrder		      46
+      Port		      "11"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "zero_speed"
+      SID		      "31"
+      Position		      [25, 918, 55, 932]
+      ZOrder		      44
+      Port		      "12"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "dist_to_tp2"
+      SID		      "32"
+      Position		      [25, 963, 55, 977]
+      ZOrder		      47
+      Port		      "13"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "dist_to_tp_threshold"
+      SID		      "33"
+      Position		      [25, 1008, 55, 1022]
+      ZOrder		      48
+      Port		      "14"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "dist_to_tp1"
+      SID		      "34"
+      Position		      [25, 1053, 55, 1067]
+      ZOrder		      49
+      Port		      "15"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "double"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "nr_available_safe_paths"
+      SID		      "46"
+      Position		      [25, 1098, 55, 1112]
+      ZOrder		      61
+      Port		      "16"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "int8"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "gps_status"
+      SID		      "49"
+      Position		      [25, 1143, 55, 1157]
+      ZOrder		      64
+      Port		      "17"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "uint8"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SupervisorChart"
+      SID		      "15"
+      Ports		      [17, 12]
+      Position		      [225, 417, 580, 1163]
+      ZOrder		      30
+      LibraryVersion	      "1.267"
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "Chart"
+      Variant		      off
+      System {
+	Name			"SupervisorChart"
+	Location		[-8, -8, 1928, 1048]
+	Open			on
+	PortBlocksUseCompactNotation off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"143"
+	Block {
+	  BlockType		  Inport
+	  Name			  "goal_received"
+	  SID			  "15::115"
+	  Position		  [20, 101, 40, 119]
+	  ZOrder		  94
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "received_new_goal"
+	  SID			  "15::116"
+	  Position		  [20, 136, 40, 154]
+	  ZOrder		  95
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "spp_success"
+	  SID			  "15::117"
+	  Position		  [20, 171, 40, 189]
+	  ZOrder		  96
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "unstructuredAreaStartExists"
+	  SID			  "15::118"
+	  Position		  [20, 206, 40, 224]
+	  ZOrder		  97
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "unstructuredAreaEndExists"
+	  SID			  "15::119"
+	  Position		  [20, 246, 40, 264]
+	  ZOrder		  98
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "upp_success"
+	  SID			  "15::120"
+	  Position		  [20, 281, 40, 299]
+	  ZOrder		  99
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ego_pos_init"
+	  SID			  "15::121"
+	  Position		  [20, 316, 40, 334]
+	  ZOrder		  100
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "odom_init"
+	  SID			  "15::122"
+	  Position		  [20, 351, 40, 369]
+	  ZOrder		  101
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dist_to_pose_threshold"
+	  SID			  "15::123"
+	  Position		  [20, 386, 40, 404]
+	  ZOrder		  102
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dist_to_goal"
+	  SID			  "15::124"
+	  Position		  [20, 426, 40, 444]
+	  ZOrder		  103
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "ego_velocity"
+	  SID			  "15::125"
+	  Position		  [20, 461, 40, 479]
+	  ZOrder		  104
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "zero_speed"
+	  SID			  "15::126"
+	  Position		  [20, 496, 40, 514]
+	  ZOrder		  105
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dist_to_tp2"
+	  SID			  "15::127"
+	  Position		  [20, 531, 40, 549]
+	  ZOrder		  106
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dist_to_tp_threshold"
+	  SID			  "15::128"
+	  Position		  [20, 566, 40, 584]
+	  ZOrder		  107
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "dist_to_tp1"
+	  SID			  "15::129"
+	  Position		  [20, 606, 40, 624]
+	  ZOrder		  108
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "nr_available_safe_paths"
+	  SID			  "15::139"
+	  Position		  [20, 641, 40, 659]
+	  ZOrder		  118
+	  Port			  "16"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "gps_status"
+	  SID			  "15::143"
+	  Position		  [20, 676, 40, 694]
+	  ZOrder		  122
+	  Port			  "17"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "15::92"
+	  Ports			  [1, 1]
+	  Position		  [270, 570, 320, 610]
+	  ZOrder		  72
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "15::91"
+	  Tag			  "Stateflow S-Function SupervisorStateMachine 5"
+	  Ports			  [17, 13]
+	  Position		  [180, 110, 230, 470]
+	  ZOrder		  71
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[17 13]"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  on
+	  SFcnIsStateOwnerBlock	  off
+	  Port {
+	    PortNumber		    2
+	    Name		    "local_planner_activate"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "spp_call"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "tp1_assign"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "tp2_assign"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "upp_call"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "path_publish"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "stitch_mode"
+	  }
+	  Port {
+	    PortNumber		    9
+	    Name		    "upp_arg1"
+	  }
+	  Port {
+	    PortNumber		    10
+	    Name		    "upp_arg2"
+	  }
+	  Port {
+	    PortNumber		    11
+	    Name		    "ref_controller_mode"
+	  }
+	  Port {
+	    PortNumber		    12
+	    Name		    "high_state"
+	  }
+	  Port {
+	    PortNumber		    13
+	    Name		    "state"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "15::93"
+	  Position		  [460, 581, 480, 599]
+	  ZOrder		  73
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "local_planner_activate"
+	  SID			  "15::130"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  109
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "spp_call"
+	  SID			  "15::131"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  110
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tp1_assign"
+	  SID			  "15::132"
+	  Position		  [460, 171, 480, 189]
+	  ZOrder		  111
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tp2_assign"
+	  SID			  "15::133"
+	  Position		  [460, 206, 480, 224]
+	  ZOrder		  112
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "upp_call"
+	  SID			  "15::134"
+	  Position		  [460, 246, 480, 264]
+	  ZOrder		  113
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "path_publish"
+	  SID			  "15::135"
+	  Position		  [460, 281, 480, 299]
+	  ZOrder		  114
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "stitch_mode"
+	  SID			  "15::136"
+	  Position		  [460, 316, 480, 334]
+	  ZOrder		  115
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "upp_arg1"
+	  SID			  "15::137"
+	  Position		  [460, 351, 480, 369]
+	  ZOrder		  116
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "upp_arg2"
+	  SID			  "15::138"
+	  Position		  [460, 386, 480, 404]
+	  ZOrder		  117
+	  Port			  "9"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ref_controller_mode"
+	  SID			  "15::140"
+	  Position		  [460, 426, 480, 444]
+	  ZOrder		  119
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "high_state"
+	  SID			  "15::141"
+	  Position		  [460, 461, 480, 479]
+	  ZOrder		  120
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "state"
+	  SID			  "15::142"
+	  Position		  [460, 496, 480, 514]
+	  ZOrder		  121
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1920
+	  SrcBlock		  "goal_received"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1921
+	  SrcBlock		  "received_new_goal"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  1922
+	  SrcBlock		  "spp_success"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  1923
+	  SrcBlock		  "unstructuredAreaStartExists"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  1924
+	  SrcBlock		  "unstructuredAreaEndExists"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  1925
+	  SrcBlock		  "upp_success"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  6
+	}
+	Line {
+	  ZOrder		  1926
+	  SrcBlock		  "ego_pos_init"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  1927
+	  SrcBlock		  "odom_init"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  8
+	}
+	Line {
+	  ZOrder		  1928
+	  SrcBlock		  "dist_to_pose_threshold"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  9
+	}
+	Line {
+	  ZOrder		  1929
+	  SrcBlock		  "dist_to_goal"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  10
+	}
+	Line {
+	  ZOrder		  1930
+	  SrcBlock		  "ego_velocity"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  11
+	}
+	Line {
+	  ZOrder		  1931
+	  SrcBlock		  "zero_speed"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  12
+	}
+	Line {
+	  ZOrder		  1932
+	  SrcBlock		  "dist_to_tp2"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  13
+	}
+	Line {
+	  ZOrder		  1933
+	  SrcBlock		  "dist_to_tp_threshold"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  14
+	}
+	Line {
+	  ZOrder		  1934
+	  SrcBlock		  "dist_to_tp1"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  15
+	}
+	Line {
+	  ZOrder		  1935
+	  SrcBlock		  "nr_available_safe_paths"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  16
+	}
+	Line {
+	  ZOrder		  1936
+	  SrcBlock		  "gps_status"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  17
+	}
+	Line {
+	  Name			  "local_planner_activate"
+	  ZOrder		  1937
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "local_planner_activate"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "spp_call"
+	  ZOrder		  1938
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "spp_call"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "tp1_assign"
+	  ZOrder		  1939
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "tp1_assign"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "tp2_assign"
+	  ZOrder		  1940
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  5
+	  DstBlock		  "tp2_assign"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "upp_call"
+	  ZOrder		  1941
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  6
+	  Points		  [0, -10]
+	  DstBlock		  "upp_call"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "path_publish"
+	  ZOrder		  1942
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  7
+	  DstBlock		  "path_publish"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "stitch_mode"
+	  ZOrder		  1943
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  8
+	  DstBlock		  "stitch_mode"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "upp_arg1"
+	  ZOrder		  1944
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  9
+	  DstBlock		  "upp_arg1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "upp_arg2"
+	  ZOrder		  1945
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  10
+	  DstBlock		  "upp_arg2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "ref_controller_mode"
+	  ZOrder		  1946
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  11
+	  DstBlock		  "ref_controller_mode"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "high_state"
+	  ZOrder		  1947
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  12
+	  DstBlock		  "high_state"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "state"
+	  ZOrder		  1948
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  13
+	  DstBlock		  "state"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1949
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1950
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "local_planner_activate"
+      SID		      "35"
+      Position		      [740, 453, 770, 467]
+      ZOrder		      50
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "spp_call"
+      SID		      "36"
+      Position		      [740, 513, 770, 527]
+      ZOrder		      51
+      Port		      "2"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "tp1_assign"
+      SID		      "37"
+      Position		      [740, 573, 770, 587]
+      ZOrder		      52
+      Port		      "3"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "tp2_assign"
+      SID		      "38"
+      Position		      [740, 633, 770, 647]
+      ZOrder		      53
+      Port		      "4"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "upp_call"
+      SID		      "39"
+      Position		      [740, 693, 770, 707]
+      ZOrder		      54
+      Port		      "5"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "path_publish"
+      SID		      "40"
+      Position		      [740, 753, 770, 767]
+      ZOrder		      55
+      Port		      "6"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "stitch_mode"
+      SID		      "41"
+      Position		      [740, 813, 770, 827]
+      ZOrder		      56
+      Port		      "7"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "Enum: stitch_mode_dt"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "upp_arg1"
+      SID		      "43"
+      Position		      [740, 873, 770, 887]
+      ZOrder		      58
+      Port		      "8"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "Enum: upp_arg_dt"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "upp_arg2"
+      SID		      "44"
+      Position		      [740, 933, 770, 947]
+      ZOrder		      59
+      Port		      "9"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "Enum: upp_arg_dt"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "ref_controller_mode"
+      SID		      "45"
+      Position		      [740, 993, 770, 1007]
+      ZOrder		      60
+      Port		      "10"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "Enum: ref_controller_mode_dt"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "high_state"
+      SID		      "47"
+      Position		      [740, 1053, 770, 1067]
+      ZOrder		      62
+      Port		      "11"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "Enum: high_state_dt"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "state"
+      SID		      "48"
+      Position		      [740, 1113, 770, 1127]
+      ZOrder		      63
+      Port		      "12"
+      IconDisplay	      "Port number"
+      OutDataTypeStr	      "Enum: state_dt"
+    }
+    Line {
+      ZOrder		      31
+      SrcBlock		      "goal_received"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      32
+      SrcBlock		      "received_new_goal"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      33
+      SrcBlock		      "spp_success"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      34
+      SrcBlock		      "unstructuredAreaStartExists"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      35
+      SrcBlock		      "unstructuredAreaEndExists"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      36
+      SrcBlock		      "upp_success"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      37
+      SrcBlock		      "ego_pose_init"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      38
+      SrcBlock		      "odom_init"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      39
+      SrcBlock		      "dist_to_pose_threshold"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      40
+      SrcBlock		      "dist_to_goal"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      10
+    }
+    Line {
+      ZOrder		      41
+      SrcBlock		      "ego_velocity"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      11
+    }
+    Line {
+      ZOrder		      42
+      SrcBlock		      "zero_speed"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      12
+    }
+    Line {
+      ZOrder		      43
+      SrcBlock		      "dist_to_tp2"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      13
+    }
+    Line {
+      ZOrder		      44
+      SrcBlock		      "dist_to_tp_threshold"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      14
+    }
+    Line {
+      ZOrder		      45
+      SrcBlock		      "dist_to_tp1"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      15
+    }
+    Line {
+      ZOrder		      47
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      1
+      DstBlock		      "local_planner_activate"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      48
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      2
+      DstBlock		      "spp_call"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      49
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      3
+      DstBlock		      "tp1_assign"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      50
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      4
+      DstBlock		      "tp2_assign"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      51
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      5
+      DstBlock		      "upp_call"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      52
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      6
+      DstBlock		      "path_publish"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      53
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      7
+      DstBlock		      "stitch_mode"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      54
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      8
+      DstBlock		      "upp_arg1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      55
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      9
+      DstBlock		      "upp_arg2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      56
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      10
+      DstBlock		      "ref_controller_mode"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      57
+      SrcBlock		      "nr_available_safe_paths"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      16
+    }
+    Line {
+      ZOrder		      58
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      11
+      DstBlock		      "high_state"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      59
+      SrcBlock		      "SupervisorChart"
+      SrcPort		      12
+      DstBlock		      "state"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      60
+      SrcBlock		      "gps_status"
+      SrcPort		      1
+      DstBlock		      "SupervisorChart"
+      DstPort		      17
+    }
+  }
+}
+#Finite State Machines
+#
+#   Stateflow 80000011
+#
+#
+Stateflow {
+  machine {
+    id			    1
+    name		    "SupervisorStateMachine"
+    created		    "23-Nov-2017 09:31:07"
+    isLibrary		    0
+    sfVersion		    80000011
+    firstTarget		    114
+  }
+  chart {
+    id			    2
+    machine		    1
+    name		    "SupervisorChart"
+    windowPosition	    [200 217 464 349]
+    viewLimits		    [688.841 2246.841 1275.731 2147.731]
+    zoomFactor		    1.333
+    transitionColor	    [0.3215686274509804 0.5450980392156862 0.7725490196078432]
+    transitionLabelColor    [0.3215686274509804 0.5450980392156862 0.7725490196078432]
+    junctionColor	    [0.7764705882352941 0.4980392156862745 0]
+    chartColor		    [1 0.9882352941176471 0.9254901960784314]
+    screen		    [1 1 3200 1200 1.25]
+    treeNode		    [0 3 0 0]
+    viewObj		    2
+    visible		    1
+    ssIdHighWaterMark	    321
+    decomposition	    CLUSTER_CHART
+    chartFileNumber	    5
+    saturateOnIntegerOverflow 1
+    userSpecifiedStateTransitionExecutionOrder 1
+    disableImplicitCasting  1
+    actionLanguage	    2
+    firstData		    68
+    firstTransition	    101
+    firstJunction	    99
+  }
+  state {
+    id			    3
+    labelString		    "Init\nen:\npath_publish = false;\nhigh_state = high_state_dt.state_init;\nspp_call = false;\ntp1"
+    "_assign = false;\ntp2_assign = false;\nupp_call = false;\nstitch_mode = stitch_mode_dt.stitch_mode_unknown;\nupp_a"
+    "rg1 = upp_arg_dt.upp_arg_unknown;\nupp_arg2 = upp_arg_dt.upp_arg_unknown;\nref_controller_mode = ref_controller_mo"
+    "de_dt.nominal;\ntp1_init = false;\ntp2_init = false;\n"
+    position		    [701.3169 1319.3921 1458.3333 918.3333]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 12 0 26]
+    subviewer		    2
+    ssIdNumber		    304
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+    firstTransition	    32
+    firstJunction	    27
+  }
+  state {
+    id			    4
+    labelString		    "WaitingForGoal\n% Waiting for the first goal message\nen:\nstate = state_dt.state_waiting_for_goal;"
+    position		    [757.5092 1816.163 230 167.5]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 8 16]
+    subviewer		    2
+    ssIdNumber		    200
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    5
+    labelString		    "Failed\nen:\nstate = state_dt.state_failed;"
+    position		    [1298.9675 1367.538 267.5 191.25]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 12 15]
+    subviewer		    2
+    ssIdNumber		    210
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    6
+    labelString		    "GoToGoal\n% Change stitch mode\nen:\nstitch_mode = stitch_mode_dt.upp;\nstate = state_dt.state_g"
+    "o_to_goal;"
+    position		    [2550.6808 2078.0484 209.25 74.5]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 17 9]
+    subviewer		    2
+    ssIdNumber		    254
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    7
+    labelString		    "Goal\n% Send stationary command\nen:\nstate = state_dt.state_goal;"
+    position		    [1396.8008 2011.715 257.5 162.5]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 16 0]
+    subviewer		    2
+    ssIdNumber		    242
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    8
+    labelString		    "ParkingToRoad\n% Initialize tp1. Call UPP\nen:\ntp1_init = true;\ntp1_assign = true;\nupp_call ="
+    " true;\nupp_arg1 = upp_arg_dt.ego_pose_arg;\nupp_arg2 = upp_arg_dt.tp1_pose_arg;\nstate = state_dt.state_parking_t"
+    "o_road;\nex:\ntp1_assign = false;\nupp_call = false;"
+    position		    [1882.7225 1612.9546 236.5 251.25]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 15 4]
+    subviewer		    2
+    ssIdNumber		    222
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    9
+    labelString		    "WaitToLeaveTp2\nen:\nstate = state_dt.state_wait_to_leave_tp2;"
+    position		    [2892.7487 2131.7984 235 60]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 6 0]
+    subviewer		    2
+    ssIdNumber		    250
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    10
+    labelString		    "SPP\n% Change stitch mode\nen:\nstitch_mode = stitch_mode_dt.spp;\nstate = state_dt.state_spp;"
+    position		    [2834.707 1547.5484 256.75 86]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 18 11]
+    subviewer		    2
+    ssIdNumber		    271
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    11
+    labelString		    "CloseToTransition2\n% Call UPP\nen:\nupp_call = true;\nupp_arg1 = upp_arg_dt.tp2_pose_arg;\nupp_"
+    "arg2 = upp_arg_dt.goal_pose_arg;\nstate = state_dt.state_close_to_tp2;\nex:\nupp_call = false;"
+    position		    [3057.2177 1819.038 255.5 159]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 10 21]
+    subviewer		    2
+    ssIdNumber		    248
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    12
+    labelString		    "ParkingToParking\n% Initialize tp1 and tp2. Call UPP\nen:\ntp1_init = true;\ntp2_init = true;\nt"
+    "p1_assign = true;\ntp2_assign = true;\nupp_call = true;\nupp_arg1 = upp_arg_dt.ego_pose_arg;\nupp_arg2 = upp_arg_d"
+    "t.tp1_pose_arg;\nstate = state_dt.state_parking_to_parking;\nex:\ntp1_assign = false;\ntp2_assign = false;\nupp_ca"
+    "ll = false;"
+    position		    [1849.5975 1340.288 227.5 246]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 0 5]
+    subviewer		    2
+    ssIdNumber		    221
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    13
+    labelString		    "TransitionToSPP\n% Change stitch mode\nen:\nstitch_mode = stitch_mode_dt.upp_to_spp;\nstate = st"
+    "ate_dt.state_transition_to_spp;"
+    position		    [3097.2177 1368.1734 257 80.5]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 25 14]
+    subviewer		    2
+    ssIdNumber		    261
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    14
+    labelString		    "WaitToLeaveTp1\nen:\nstate = state_dt.state_wait_to_leave_tp1;"
+    position		    [3125.9677 1498.8817 242 64]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 13 18]
+    subviewer		    2
+    ssIdNumber		    262
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    15
+    labelString		    "CallForPlan\n% Activate the local planner and ask SPP to plan to the goal pose\nen:\nspp_call = "
+    "true;\nlocal_planner_activate = true;\nstate = state_dt.state_call_for_plan;\nex:\nspp_call = false;\nlocal_planne"
+    "r_activate = false;"
+    position		    [1194.5925 1603.3296 411.25 167.5]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 5 8]
+    subviewer		    2
+    ssIdNumber		    207
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    16
+    labelString		    "WaitForTransforms\n% Waiting for the ego pose and odometry transformations to be set up\nen:\nst"
+    "ate = state_dt.state_wait_for_transforms;"
+    position		    [757.5092 2003.9546 411.25 163.75]
+    fontSize		    12
+    chart		    2
+    treeNode		    [3 0 4 7]
+    subviewer		    2
+    ssIdNumber		    202
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    17
+    labelString		    "TransitionToUPP2\n% Change stitch mode.\nen:\nstitch_mode = stitch_mode_dt.spp_to_upp;\nstate = "
+    "state_dt.state_transition_to_upp2;"
+    position		    [3200.6654 2011.715 242.5 84.25]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 21 6]
+    subviewer		    2
+    ssIdNumber		    249
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    18
+    labelString		    "RoadToParking\n% Initialize tp2. Set stitch mode. Activate reference path.\nen:\ntp2_init = true"
+    ";\ntp2_assign = true;\npath_publish = true;\nstitch_mode = stitch_mode_dt.spp;\nstate = state_dt.state_road_to_par"
+    "king;\nex:\ntp2_assign = false;"
+    position		    [2374.8475 1513.0067 215.5833 178.4167]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 14 10]
+    subviewer		    2
+    ssIdNumber		    223
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    19
+    labelString		    "SafeStop\nen:\nstate = state_dt.state_safe_stop;"
+    position		    [3922.9545 1928.7797 183 64]
+    fontSize		    12
+    chart		    2
+    treeNode		    [20 0 22 0]
+    subviewer		    2
+    ssIdNumber		    297
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    20
+    labelString		    "FailureState\nen:\nhigh_state = high_state_dt.state_failure;"
+    position		    [3621.0336 1572.8713 498.25 445.75]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 24 26 0]
+    subviewer		    2
+    ssIdNumber		    300
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+    firstTransition	    48
+    firstJunction	    47
+  }
+  state {
+    id			    21
+    labelString		    "RoadToRoad\n% Good to go! Set stitch mode. Activate reference path.\nen:\npath_publish = true;\n"
+    "stitch_mode = stitch_mode_dt.spp;\nstate = state_dt.state_road_to_road;"
+    position		    [2374.8475 1873.8817 337.5 98.75]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 11 17]
+    subviewer		    2
+    ssIdNumber		    224
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    22
+    labelString		    "EmergencyStop\nen:\nstate = state_dt.state_emergency_stop;"
+    position		    [3648.2175 1928.7797 254 61]
+    fontSize		    12
+    chart		    2
+    treeNode		    [20 0 23 19]
+    subviewer		    2
+    ssIdNumber		    296
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    23
+    labelString		    "AEB\nen:\nref_controller_mode ...\n    = ref_controller_mode_dt.emergency_maneuver;\nstate = sta"
+    "te_dt.state_aeb;"
+    position		    [3650.7175 1791.538 293 80]
+    fontSize		    12
+    chart		    2
+    treeNode		    [20 0 24 22]
+    subviewer		    2
+    ssIdNumber		    290
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    24
+    labelString		    "SSMP\nen:\nref_controller_mode ...\n    = ref_controller_mode_dt.safe_maneuver;\nstate = state_d"
+    "t.state_ssmp;"
+    position		    [3853.9545 1658.788 246.5 87.75]
+    fontSize		    12
+    chart		    2
+    treeNode		    [20 0 0 23]
+    subviewer		    2
+    ssIdNumber		    286
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    25
+    labelString		    "FromParking\n% Set stitch mode. Activate reference path.\nen:\npath_publish = true;\nstitch_mode"
+    " = stitch_mode_dt.upp;\nstate = state_dt.state_from_parking;"
+    position		    [2565.7177 1355.5484 264.75 91.25]
+    fontSize		    12
+    chart		    2
+    treeNode		    [26 0 0 13]
+    subviewer		    2
+    ssIdNumber		    232
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    26
+    labelString		    "Driving\nen:\npath_publish = true;\nref_controller_mode...\n    = ref_controller_mode_dt.nominal"
+    ";\nhigh_state = high_state_dt.state_driving;"
+    position		    [2323.03 1320.3192 1137.8437 916.4792]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 25 3 20]
+    subviewer		    2
+    ssIdNumber		    199
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+    firstTransition	    55
+    firstJunction	    52
+  }
+  junction {
+    id			    27
+    position		    [2099.7904 1385.3296 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    233
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [3 0 28]
+  }
+  junction {
+    id			    28
+    position		    [1793.3425 1520.038 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    215
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [3 27 29]
+  }
+  junction {
+    id			    29
+    position		    [1665.0092 1579.413 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    213
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [3 28 30]
+  }
+  junction {
+    id			    30
+    position		    [1637.2575 1899.913 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    318
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [3 29 31]
+  }
+  junction {
+    id			    31
+    position		    [1808.3425 1931.288 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    216
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [3 30 0]
+  }
+  transition {
+    id			    32
+    labelString		    "[~upp_success]"
+    labelPosition	    [1940.654 1322.996 85.688 16]
+    fontSize		    12
+    src {
+      id		      27
+      intersection	      [2 0.7189 -0.6951 0 2104.8227 1380.4638 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [2 1 0 0.0784 1566.4675 1382.538 0 0]
+    }
+    midPoint		    [1953.5993 1335.4183]
+    chart		    2
+    dataLimits		    [1566.468 2108.772 1334.207 1384.938]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    239
+    linkNode		    [3 0 33]
+  }
+  transition {
+    id			    33
+    labelString		    ""
+    labelPosition	    [2080.944 1367.33 0 0]
+    fontSize		    12
+    src {
+      id		      12
+      intersection	      [2 1 0 0.1831 2077.0975 1385.3296 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [4 -1 0 0 2092.7904 1385.3296 0 0]
+    }
+    midPoint		    [2080.9439 1385.3296]
+    chart		    2
+    dataLimits		    [2077.097 2092.79 1382.93 1387.73]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    236
+    linkNode		    [3 32 34]
+  }
+  transition {
+    id			    34
+    labelString		    ""
+    labelPosition	    [2099.79 1506.642 0 0]
+    fontSize		    12
+    src {
+      id		      8
+      intersection	      [1 0 -1 0.9178 2099.7904 1612.9546 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [3 0 1 0 2099.7904 1392.3296 0 0]
+    }
+    midPoint		    [2099.7904 1506.6421]
+    chart		    2
+    dataLimits		    [2097.39 2102.19 1392.33 1612.955]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    235
+    linkNode		    [3 33 35]
+  }
+  transition {
+    id			    35
+    labelString		    "[unstructuredAreaEndExists]"
+    labelPosition	    [1737.171 1488.895 153.969 16]
+    fontSize		    12
+    src {
+      id		      28
+      intersection	      [2 1 0 0 1800.3425 1520.038 0 0]
+    }
+    dst {
+      id		      12
+      intersection	      [4 -1 0 0.2693 1849.5975 1520.038 0 0]
+    }
+    midPoint		    [1820.97 1520.038]
+    chart		    2
+    dataLimits		    [1800.343 1849.598 1517.638 1522.438]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    225
+    linkNode		    [3 34 36]
+  }
+  transition {
+    id			    36
+    labelString		    "[unstructuredAreaStartExists]"
+    labelPosition	    [1616.995 1515.231 157.938 16]
+    fontSize		    12
+    src {
+      id		      29
+      intersection	      [2 0.9076 -0.4199 0 1671.3622 1576.4737 0 0]
+    }
+    dst {
+      id		      28
+      intersection	      [4 -0.9076 0.4199 0 1786.9895 1522.9773 0 0]
+    }
+    midPoint		    [1725.5455 1551.4051]
+    chart		    2
+    dataLimits		    [1671.362 1786.989 1522.977 1576.474]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    217
+    linkNode		    [3 35 37]
+  }
+  transition {
+    id			    37
+    labelString		    "[~unstructuredAreaEndExists]"
+    labelPosition	    [1714.329 1660.017 160.969 16]
+    fontSize		    12
+    src {
+      id		      28
+      intersection	      [3 0 1 0 1793.3425 1527.038 0 0]
+    }
+    dst {
+      id		      8
+      intersection	      [4 -1 0 0.613 1882.7225 1710.1963 0 0]
+    }
+    midPoint		    [1808.9795 1643.6701]
+    chart		    2
+    dataLimits		    [1793.332 1882.723 1527.038 1712.596]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    226
+    linkNode		    [3 36 38]
+  }
+  transition {
+    id			    38
+    labelString		    ""
+    labelPosition	    [1663.973 1647.626 0 0]
+    fontSize		    12
+    src {
+      id		      5
+      intersection	      [2 1 0 0.8568 1566.4675 1531.3974 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [1 0.3188 -0.9478 0 1639.489 1893.2782 0 0]
+    }
+    midPoint		    [1663.9729 1665.6256]
+    chart		    2
+    dataLimits		    [1566.468 1672.046 1531.397 1893.278]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    321
+    linkNode		    [3 37 39]
+  }
+  transition {
+    id			    39
+    labelString		    "[~spp_success]"
+    labelPosition	    [1357.579 1574.556 85.016 16]
+    fontSize		    12
+    src {
+      id		      15
+      intersection	      [1 0 -1 0.3568 1341.3169 1603.3296 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [3 0 1 0.8417 1341.3169 1558.788 0 0]
+    }
+    midPoint		    [1341.3169 1585.0588]
+    chart		    2
+    dataLimits		    [1338.917 1343.717 1558.788 1603.33]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    211
+    linkNode		    [3 38 40]
+  }
+  transition {
+    id			    40
+    labelString		    "[spp_success]"
+    labelPosition	    [1568.993 1561.833 78.016 16]
+    fontSize		    12
+    src {
+      id		      15
+      intersection	      [1 0 -1 0.9635 1590.8425 1603.3296 0 0]
+    }
+    dst {
+      id		      29
+      intersection	      [4 -1 0 0 1658.0092 1579.413 0 0]
+    }
+    midPoint		    [1612.4486 1583.3941]
+    chart		    2
+    dataLimits		    [1590.843 1658.009 1577.013 1603.33]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    214
+    linkNode		    [3 39 41]
+  }
+  transition {
+    id			    41
+    labelString		    "[~unstructuredAreaStartExists]"
+    labelPosition	    [1595.222 1683.625 164.938 16]
+    fontSize		    12
+    src {
+      id		      29
+      intersection	      [3 0.3772 0.9261 0 1667.6499 1585.8958 0 0]
+    }
+    dst {
+      id		      31
+      intersection	      [1 -0.3772 -0.9261 0 1805.7018 1924.8052 0 0]
+    }
+    midPoint		    [1735.1669 1751.646]
+    chart		    2
+    dataLimits		    [1667.65 1805.702 1585.896 1924.805]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    218
+    linkNode		    [3 40 42]
+  }
+  transition {
+    id			    42
+    labelString		    "[odom_init && ego_pos_init]"
+    labelPosition	    [986.336 1735.466 151.313 16]
+    fontSize		    12
+    src {
+      id		      16
+      intersection	      [1 0 -1 0.5988 1003.7753 2003.9546 0 0]
+    }
+    dst {
+      id		      15
+      intersection	      [4 -1 0 0.6481 1194.5925 1662.2718 0 0]
+    }
+    midPoint		    [1046.7443 1784.6736]
+    chart		    2
+    dataLimits		    [1003.775 1194.593 1659.872 2003.955]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    208
+    linkNode		    [3 41 43]
+  }
+  transition {
+    id			    43
+    labelString		    "[received_new_goal]"
+    labelPosition	    [1555.218 1830.803 112 16]
+    fontSize		    12
+    src {
+      id		      30
+      intersection	      [1 -0.6365 -0.7713 0 1632.8021 1894.514 0 0]
+    }
+    dst {
+      id		      15
+      intersection	      [3 0 1 0.1273 1553.5075 1770.8296 0 0]
+    }
+    midPoint		    [1581.9964 1840.6814]
+    chart		    2
+    dataLimits		    [1551.107 1632.802 1770.83 1894.514]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    311
+    linkNode		    [3 42 44]
+  }
+  transition {
+    id			    44
+    labelString		    ""
+    labelPosition	    [934.468 1801.163 0 0]
+    fontSize		    12
+    src {
+      intersection	      [0 -0 1 0 934.4677 1786.163 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [1 0 -1 0.7694 934.4677 1816.163 0 0]
+    }
+    midPoint		    [934.4677 1801.163]
+    chart		    2
+    dataLimits		    [932.068 936.868 1786.163 1816.163]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    201
+    linkNode		    [3 43 45]
+  }
+  transition {
+    id			    45
+    labelString		    ""
+    labelPosition	    [1629.644 1943.789 0 0]
+    fontSize		    12
+    src {
+      id		      7
+      intersection	      [1 0 -1 0.9338 1637.2575 2011.715 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [3 -0.3852 0.9228 0 1634.5612 1906.3729 0 0]
+    }
+    midPoint		    [1629.6439 1961.7888]
+    chart		    2
+    dataLimits		    [1626.854 1637.257 1906.373 2011.715]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    320
+    linkNode		    [3 44 46]
+  }
+  transition {
+    id			    46
+    labelString		    "[goal_received]"
+    labelPosition	    [898.295 1979.789 83.328 16]
+    fontSize		    12
+    src {
+      id		      4
+      intersection	      [3 0 1 0.2543 929.0092 1983.663 0 0]
+    }
+    dst {
+      id		      16
+      intersection	      [1 0 -1 0.4773 953.8008 2003.9546 0 0]
+    }
+    midPoint		    [941.405 1989.8088]
+    chart		    2
+    dataLimits		    [929.009 956.201 1983.663 2003.955]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    203
+    linkNode		    [3 45 0]
+  }
+  junction {
+    id			    47
+    position		    [3695.7045 1646.4546 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    288
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [20 0 0]
+  }
+  transition {
+    id			    48
+    labelString		    "[nr_available_safe_paths > 0]"
+    labelPosition	    [3728.028 1613 159 16]
+    fontSize		    12
+    src {
+      id		      47
+      intersection	      [2 1 0 0 3702.7045 1646.4546 0 0]
+    }
+    dst {
+      id		      24
+      intersection	      [1 0 -1 0.0473 3865.6252 1658.788 0 0]
+    }
+    midPoint		    [3804.5371 1628.249]
+    chart		    2
+    dataLimits		    [3702.704 3868.025 1628.075 1658.788]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    289
+    linkNode		    [20 0 49]
+  }
+  transition {
+    id			    49
+    labelString		    "[nr_available_safe_paths <= 0]"
+    labelPosition	    [3673.521 1752.816 166 16]
+    fontSize		    12
+    src {
+      id		      47
+      intersection	      [3 0 1 0 3695.7045 1653.4546 0 0]
+    }
+    dst {
+      id		      23
+      intersection	      [1 0 -1 0.1535 3695.7045 1791.538 0 0]
+    }
+    midPoint		    [3695.7045 1718.4963]
+    chart		    2
+    dataLimits		    [3693.304 3698.104 1653.455 1791.538]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    291
+    linkNode		    [20 48 50]
+  }
+  transition {
+    id			    50
+    labelString		    "[ego_velocity < zero_speed]"
+    labelPosition	    [3837.056 1896.346 151.672 16]
+    fontSize		    12
+    src {
+      id		      24
+      intersection	      [3 0 1 0.5176 3972.8752 1746.538 0 0]
+    }
+    dst {
+      id		      19
+      intersection	      [1 0 -1 0.448 4004.9294 1928.7797 0 0]
+    }
+    midPoint		    [3988.9023 1833.6589]
+    chart		    2
+    dataLimits		    [3972.875 4007.329 1746.538 1928.78]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    294
+    linkNode		    [20 49 51]
+  }
+  transition {
+    id			    51
+    labelString		    "[ego_velocity < zero_speed]"
+    labelPosition	    [3623.251 1893.258 151.672 16]
+    fontSize		    12
+    src {
+      id		      23
+      intersection	      [3 0 1 0.4959 3798.4294 1871.538 0 0]
+    }
+    dst {
+      id		      22
+      intersection	      [1 0 -1 0.4969 3774.4294 1928.7797 0 0]
+    }
+    midPoint		    [3786.4294 1896.1589]
+    chart		    2
+    dataLimits		    [3772.029 3798.429 1871.538 1928.78]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    293
+    linkNode		    [20 50 0]
+  }
+  junction {
+    id			    52
+    position		    [2653.2049 1579.2984 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    273
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [26 0 53]
+  }
+  junction {
+    id			    53
+    position		    [2961.0508 1758.0484 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    269
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [26 52 54]
+  }
+  junction {
+    id			    54
+    position		    [2394.3842 2088.0484 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    256
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [26 53 0]
+  }
+  transition {
+    id			    55
+    labelString		    "[dist_to_tp1 < dist_to_tp_threshold]"
+    labelPosition	    [2851.362 1392.258 188.984 16]
+    fontSize		    12
+    src {
+      id		      25
+      intersection	      [2 1 0 0.2125 2830.4677 1374.9346 0 0]
+    }
+    dst {
+      id		      13
+      intersection	      [4 -1 0 0.391 3097.2177 1417.2014 0 0]
+    }
+    midPoint		    [2959.8427 1396.068]
+    chart		    2
+    dataLimits		    [2830.468 3097.218 1374.935 1419.601]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    265
+    linkNode		    [26 0 56]
+  }
+  transition {
+    id			    56
+    labelString		    "[dist_to_tp1 < dist_to_pose_threshold]"
+    labelPosition	    [3259.203 1470.375 205 16]
+    fontSize		    12
+    src {
+      id		      13
+      intersection	      [3 0 1 0.2637 3286.4397 1448.6734 0 0]
+    }
+    dst {
+      id		      14
+      intersection	      [1 0 -1 0.5877 3268.1949 1498.8817 0 0]
+    }
+    midPoint		    [3277.3173 1469.7776]
+    chart		    2
+    dataLimits		    [3265.795 3286.44 1448.673 1498.882]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    266
+    linkNode		    [26 55 57]
+  }
+  transition {
+    id			    57
+    labelString		    "[dist_to_tp1 > dist_to_tp_threshold]"
+    labelPosition	    [3132.711 1611.643 188.984 16]
+    fontSize		    12
+    src {
+      id		      14
+      intersection	      [4 -1 0 0.1392 3125.9677 1553.9707 0 0]
+    }
+    dst {
+      id		      53
+      intersection	      [1 0 -1 0 2961.0508 1751.0484 0 0]
+    }
+    midPoint		    [3117.4677 1675.138]
+    chart		    2
+    dataLimits		    [2958.651 3125.968 1553.971 1751.048]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    270
+    linkNode		    [26 56 58]
+  }
+  transition {
+    id			    58
+    labelString		    ""
+    labelPosition	    [2614.318 1561.298 0 0]
+    fontSize		    12
+    src {
+      id		      18
+      intersection	      [2 1 0 0.3716 2590.4308 1579.2984 0 0]
+    }
+    dst {
+      id		      52
+      intersection	      [4 -1 0 0 2646.2049 1579.2984 0 0]
+    }
+    midPoint		    [2614.3179 1579.2984]
+    chart		    2
+    dataLimits		    [2590.431 2646.205 1576.898 1581.698]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    274
+    linkNode		    [26 57 59]
+  }
+  transition {
+    id			    59
+    labelString		    ""
+    labelPosition	    [2751.456 1561.298 0 0]
+    fontSize		    12
+    src {
+      id		      10
+      intersection	      [4 -1 0 0.6308 2834.707 1579.2984 0 0]
+    }
+    dst {
+      id		      52
+      intersection	      [2 1 0 0 2660.2049 1579.2984 0 0]
+    }
+    midPoint		    [2751.456 1579.2984]
+    chart		    2
+    dataLimits		    [2660.205 2834.707 1576.898 1581.698]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    275
+    linkNode		    [26 58 60]
+  }
+  transition {
+    id			    60
+    labelString		    "[dist_to_tp2 < dist_to_tp_threshold]"
+    labelPosition	    [2520.558 1739.081 188.984 16]
+    fontSize		    12
+    src {
+      id		      52
+      intersection	      [3 0 1 0 2653.2049 1586.2984 0 0]
+    }
+    dst {
+      id		      11
+      intersection	      [4 -1 0 0.9057 3057.2177 1834.038 0 0]
+    }
+    midPoint		    [2792.8213 1768.5582]
+    chart		    2
+    dataLimits		    [2653.205 3057.218 1586.298 1836.438]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    251
+    linkNode		    [26 59 61]
+  }
+  transition {
+    id			    61
+    labelString		    "[tp2_init]"
+    labelPosition	    [2869.258 1681.006 47.313 16]
+    fontSize		    12
+    src {
+      id		      53
+      intersection	      [4 -1 0 0 2954.0508 1758.0484 0 0]
+    }
+    dst {
+      id		      10
+      intersection	      [3 0 1 0.5525 2949.6128 1633.5484 0 0]
+    }
+    midPoint		    [2937.2588 1714.3714]
+    chart		    2
+    dataLimits		    [2937.259 2954.051 1633.548 1758.048]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    272
+    linkNode		    [26 60 62]
+  }
+  transition {
+    id			    62
+    labelString		    "[~tp2_init]"
+    labelPosition	    [2842.649 1867.169 54.313 16]
+    fontSize		    12
+    src {
+      id		      53
+      intersection	      [4 -0.829 0.5593 0 2955.2481 1761.9637 0 0]
+    }
+    dst {
+      id		      21
+      intersection	      [2 1 0 0.2128 2712.3475 1894.8974 0 0]
+    }
+    midPoint		    [2843.5688 1847.3012]
+    chart		    2
+    dataLimits		    [2712.347 2955.248 1761.964 1897.297]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    268
+    linkNode		    [26 61 63]
+  }
+  transition {
+    id			    63
+    labelString		    "[upp_success]"
+    labelPosition	    [3360.146 1959.476 78.688 16]
+    fontSize		    12
+    src {
+      id		      11
+      intersection	      [2 1 0 0.7358 3312.7177 1936.038 0 0]
+    }
+    dst {
+      id		      17
+      intersection	      [1 0 -1 0.5927 3344.3915 2011.715 0 0]
+    }
+    midPoint		    [3337.8949 1960.5362]
+    chart		    2
+    dataLimits		    [3312.718 3346.792 1936.038 2011.715]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    252
+    linkNode		    [26 62 64]
+  }
+  transition {
+    id			    64
+    labelString		    ""
+    labelPosition	    [2394.384 2022.84 0 0]
+    fontSize		    12
+    src {
+      id		      21
+      intersection	      [3 0 1 0.9421 2394.3842 1972.6317 0 0]
+    }
+    dst {
+      id		      54
+      intersection	      [1 0 -1 0 2394.3842 2081.0484 0 0]
+    }
+    midPoint		    [2394.3842 2022.84]
+    chart		    2
+    dataLimits		    [2391.984 2396.784 1972.632 2081.048]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    258
+    linkNode		    [26 63 65]
+  }
+  transition {
+    id			    65
+    labelString		    ""
+    labelPosition	    [2480.032 2070.048 0 0]
+    fontSize		    12
+    src {
+      id		      6
+      intersection	      [4 -1 0 0.8658 2550.6808 2088.0484 0 0]
+    }
+    dst {
+      id		      54
+      intersection	      [2 1 0 0 2401.3842 2088.0484 0 0]
+    }
+    midPoint		    [2480.0325 2088.0484]
+    chart		    2
+    dataLimits		    [2401.384 2550.681 2085.648 2090.448]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    257
+    linkNode		    [26 64 66]
+  }
+  transition {
+    id			    66
+    labelString		    "[dist_to_tp2 < dist_to_pose_threshold]"
+    labelPosition	    [3147.154 2154.072 205 16]
+    fontSize		    12
+    src {
+      id		      17
+      intersection	      [3 0 1 0.8939 3226.3842 2095.965 0 0]
+    }
+    dst {
+      id		      9
+      intersection	      [2 1 0 0.367 3127.7487 2153.8184 0 0]
+    }
+    midPoint		    [3194.5072 2138.3324]
+    chart		    2
+    dataLimits		    [3127.749 3226.384 2095.965 2156.218]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    253
+    linkNode		    [26 65 67]
+  }
+  transition {
+    id			    67
+    labelString		    "[dist_to_tp2 > dist_to_tp_threshold]"
+    labelPosition	    [2723.198 2193.861 188.984 16]
+    fontSize		    12
+    src {
+      id		      9
+      intersection	      [4 -1 0 0.5 2892.7487 2161.7984 0 0]
+    }
+    dst {
+      id		      6
+      intersection	      [3 0 1 0.0968 2739.6848 2152.5484 0 0]
+    }
+    midPoint		    [2797.0831 2180.307]
+    chart		    2
+    dataLimits		    [2737.285 2892.749 2152.548 2180.663]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    255
+    linkNode		    [26 66 0]
+  }
+  data {
+    id			    68
+    ssIdNumber		    198
+    name		    "goal_received"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 0 69]
+  }
+  data {
+    id			    69
+    ssIdNumber		    209
+    name		    "received_new_goal"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 68 70]
+  }
+  data {
+    id			    70
+    ssIdNumber		    212
+    name		    "spp_success"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 69 71]
+  }
+  data {
+    id			    71
+    ssIdNumber		    220
+    name		    "unstructuredAreaStartExists"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 70 72]
+  }
+  data {
+    id			    72
+    ssIdNumber		    229
+    name		    "unstructuredAreaEndExists"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 71 73]
+  }
+  data {
+    id			    73
+    ssIdNumber		    230
+    name		    "tp1_init"
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 72 74]
+  }
+  data {
+    id			    74
+    ssIdNumber		    231
+    name		    "tp2_init"
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 73 75]
+  }
+  data {
+    id			    75
+    ssIdNumber		    238
+    name		    "upp_success"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 74 76]
+  }
+  data {
+    id			    76
+    ssIdNumber		    240
+    name		    "ego_pos_init"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 75 77]
+  }
+  data {
+    id			    77
+    ssIdNumber		    241
+    name		    "odom_init"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 76 78]
+  }
+  data {
+    id			    78
+    ssIdNumber		    244
+    name		    "dist_to_pose_threshold"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 77 79]
+  }
+  data {
+    id			    79
+    ssIdNumber		    245
+    name		    "dist_to_goal"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 78 80]
+  }
+  data {
+    id			    80
+    ssIdNumber		    246
+    name		    "ego_velocity"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 79 81]
+  }
+  data {
+    id			    81
+    ssIdNumber		    247
+    name		    "zero_speed"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 80 82]
+  }
+  data {
+    id			    82
+    ssIdNumber		    259
+    name		    "dist_to_tp2"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 81 83]
+  }
+  data {
+    id			    83
+    ssIdNumber		    260
+    name		    "dist_to_tp_threshold"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 82 84]
+  }
+  data {
+    id			    84
+    ssIdNumber		    276
+    name		    "dist_to_tp1"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "double"
+    linkNode		    [2 83 85]
+  }
+  data {
+    id			    85
+    ssIdNumber		    277
+    name		    "local_planner_activate"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 84 86]
+  }
+  data {
+    id			    86
+    ssIdNumber		    278
+    name		    "spp_call"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 85 87]
+  }
+  data {
+    id			    87
+    ssIdNumber		    279
+    name		    "tp1_assign"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 86 88]
+  }
+  data {
+    id			    88
+    ssIdNumber		    280
+    name		    "tp2_assign"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 87 89]
+  }
+  data {
+    id			    89
+    ssIdNumber		    281
+    name		    "upp_call"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 88 90]
+  }
+  data {
+    id			    90
+    ssIdNumber		    282
+    name		    "path_publish"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "false"
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_BOOLEAN_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "boolean"
+    linkNode		    [2 89 91]
+  }
+  data {
+    id			    91
+    ssIdNumber		    283
+    name		    "stitch_mode"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "stitch_mode_dt.stitch_mode_unknown"
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_ENUM_TYPE
+	primitive		SF_UINT8_TYPE
+	enumType		"stitch_mode_dt"
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Enum: stitch_mode_dt"
+    linkNode		    [2 90 92]
+  }
+  data {
+    id			    92
+    ssIdNumber		    284
+    name		    "upp_arg1"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "upp_arg_dt.upp_arg_unknown"
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_ENUM_TYPE
+	primitive		SF_UINT8_TYPE
+	enumType		"upp_arg_dt"
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Enum: upp_arg_dt"
+    linkNode		    [2 91 93]
+  }
+  data {
+    id			    93
+    ssIdNumber		    285
+    name		    "upp_arg2"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "upp_arg_dt.upp_arg_unknown"
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_ENUM_TYPE
+	primitive		SF_UINT8_TYPE
+	enumType		"upp_arg_dt"
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Enum: upp_arg_dt"
+    linkNode		    [2 92 94]
+  }
+  data {
+    id			    94
+    ssIdNumber		    298
+    name		    "nr_available_safe_paths"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_INT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "int8"
+    linkNode		    [2 93 95]
+  }
+  data {
+    id			    95
+    ssIdNumber		    299
+    name		    "ref_controller_mode"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "ref_controller_mode_dt.ref_controller_mode_unknown"
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_ENUM_TYPE
+	primitive		SF_UINT8_TYPE
+	enumType		"ref_controller_mode_dt"
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Enum: ref_controller_mode_dt"
+    linkNode		    [2 94 96]
+  }
+  data {
+    id			    96
+    ssIdNumber		    308
+    name		    "high_state"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "high_state_dt.state_high_unknown"
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_ENUM_TYPE
+	primitive		SF_DOUBLE_TYPE
+	enumType		"high_state_dt"
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Enum: high_state_dt"
+    linkNode		    [2 95 97]
+  }
+  data {
+    id			    97
+    ssIdNumber		    309
+    name		    "state"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "state_dt.state_unknown"
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_ENUM_TYPE
+	primitive		SF_DOUBLE_TYPE
+	enumType		"state_dt"
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Enum: state_dt"
+    linkNode		    [2 96 98]
+  }
+  data {
+    id			    98
+    ssIdNumber		    310
+    name		    "gps_status"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	primitive		SF_UINT8_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "uint8"
+    linkNode		    [2 97 0]
+  }
+  junction {
+    id			    99
+    position		    [3686.0075 2212.6474 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    314
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [2 0 100]
+  }
+  junction {
+    id			    100
+    position		    [2746.2575 2274.1474 7]
+    chart		    2
+    subviewer		    2
+    ssIdNumber		    312
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [2 99 0]
+  }
+  transition {
+    id			    101
+    labelString		    ""
+    labelPosition	    [762.218 1304.392 0 0]
+    fontSize		    12
+    src {
+      intersection	      [0 -0 1 0 762.218 1289.3921 0 0]
+    }
+    dst {
+      id		      3
+      intersection	      [1 0 -1 0.0418 762.218 1319.3921 0 0]
+    }
+    midPoint		    [762.218 1304.3921]
+    chart		    2
+    dataLimits		    [759.818 764.618 1289.392 1319.392]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    305
+    linkNode		    [2 0 102]
+  }
+  transition {
+    id			    102
+    labelString		    "[gps_status ~= 1]"
+    labelPosition	    [3701.963 1510.854 94 16]
+    fontSize		    12
+    src {
+      id		      26
+      intersection	      [2 1 0 0.0164 3460.8737 1335.3192 0 0]
+    }
+    dst {
+      id		      47
+      intersection	      [1 0.1398 -0.9902 0 3696.6827 1639.5233 0 0]
+    }
+    midPoint		    [3633.3851 1436.5053]
+    chart		    2
+    dataLimits		    [3460.874 3700.178 1335.319 1639.523]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    302
+    linkNode		    [2 101 103]
+  }
+  transition {
+    id			    103
+    labelString		    "[upp_success]"
+    labelPosition	    [2132.478 1393.652 78.688 16]
+    fontSize		    12
+    src {
+      id		      27
+      intersection	      [2 1 -0 0 2106.7904 1385.3296 0 0]
+    }
+    dst {
+      id		      25
+      intersection	      [4 -1 0 0.6736 2565.7177 1385.3296 0 0]
+    }
+    midPoint		    [2332.254 1385.3296]
+    chart		    2
+    dataLimits		    [2106.79 2565.718 1382.93 1387.73]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    237
+    linkNode		    [2 102 104]
+  }
+  transition {
+    id			    104
+    labelString		    "[~upp_success]"
+    labelPosition	    [3319.814 1677.168 85.688 16]
+    fontSize		    12
+    src {
+      id		      11
+      intersection	      [1 0 -1 0.9413 3297.7177 1819.038 0 0]
+    }
+    dst {
+      id		      47
+      intersection	      [4 -1 0 0 3688.7045 1646.4546 0 0]
+    }
+    midPoint		    [3436.7016 1680.2368]
+    chart		    2
+    dataLimits		    [3297.718 3688.704 1644.055 1819.038]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    287
+    linkNode		    [2 103 105]
+  }
+  transition {
+    id			    105
+    labelString		    "[unstructuredAreaEndExists]"
+    labelPosition	    [2275.762 1781.754 153.969 16]
+    fontSize		    12
+    src {
+      id		      31
+      intersection	      [2 1 0 0 1815.3425 1931.288 0 0]
+    }
+    dst {
+      id		      18
+      intersection	      [3 0 1 0.9304 2389.8475 1691.4234 0 0]
+    }
+    midPoint		    [2180.0362 1892.7969]
+    chart		    2
+    dataLimits		    [1815.343 2392.247 1691.423 1932.389]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    227
+    linkNode		    [2 104 106]
+  }
+  transition {
+    id			    106
+    labelString		    ""
+    labelPosition	    [2151.793 2187.461 0 0]
+    fontSize		    12
+    src {
+      id		      100
+      intersection	      [4 -1 0.004 0 2739.2576 2274.1752 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [2 0.7931 0.6091 0 1642.8094 1904.1764 0 0]
+    }
+    midPoint		    [2151.7929 2205.4607]
+    chart		    2
+    dataLimits		    [1642.809 2739.258 1904.176 2274.324]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    319
+    linkNode		    [2 105 107]
+  }
+  transition {
+    id			    107
+    labelString		    "[~unstructuredAreaEndExists]"
+    labelPosition	    [2016.169 1984.254 160.969 16]
+    fontSize		    12
+    src {
+      id		      31
+      intersection	      [3 0 1 0 1808.3425 1938.288 0 0]
+    }
+    dst {
+      id		      21
+      intersection	      [4 -1 0 0.2857 2374.8475 1944.4217 0 0]
+    }
+    midPoint		    [2017.7777 2011.1722]
+    chart		    2
+    dataLimits		    [1808.343 2374.847 1938.288 2011.839]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    228
+    linkNode		    [2 106 108]
+  }
+  transition {
+    id			    108
+    labelString		    ""
+    labelPosition	    [3692.417 2076.332 0 0]
+    fontSize		    12
+    src {
+      id		      22
+      intersection	      [3 0 1 0.8512 3686.0075 1989.7797 0 0]
+    }
+    dst {
+      id		      99
+      intersection	      [1 0.1912 -0.9815 0 3687.346 2205.7766 0 0]
+    }
+    midPoint		    [3692.417 2094.3321]
+    chart		    2
+    dataLimits		    [3686.008 3694.224 1989.78 2205.777]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    316
+    linkNode		    [2 107 109]
+  }
+  transition {
+    id			    109
+    labelString		    ""
+    labelPosition	    [3892.127 2127.625 0 0]
+    fontSize		    12
+    src {
+      id		      19
+      intersection	      [3 0 1 0.6213 3992.2575 1992.7797 0 0]
+    }
+    dst {
+      id		      99
+      intersection	      [2 0.9988 -0.0499 0 3692.9988 2212.2979 0 0]
+    }
+    midPoint		    [3892.1271 2145.6247]
+    chart		    2
+    dataLimits		    [3692.999 3992.258 1992.78 2214.296]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    317
+    linkNode		    [2 108 110]
+  }
+  transition {
+    id			    110
+    labelString		    "[dist_to_goal < dist_to_pose_threshold && ego_velocity < zero_speed]"
+    labelPosition	    [1778.297 2060.319 376.672 16]
+    fontSize		    12
+    src {
+      id		      54
+      intersection	      [4 -1 0 0 2387.3842 2088.0484 0 0]
+    }
+    dst {
+      id		      7
+      intersection	      [2 1 0 0.4697 1654.3008 2088.0484 0 0]
+    }
+    midPoint		    [2024.8425 2088.0484]
+    chart		    2
+    dataLimits		    [1654.301 2387.384 2085.648 2090.448]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    243
+    linkNode		    [2 109 111]
+  }
+  transition {
+    id			    111
+    labelString		    ""
+    labelPosition	    [3220.124 2225.136 0 0]
+    fontSize		    12
+    src {
+      id		      99
+      intersection	      [4 -0.9979 0.0653 0 3679.0224 2213.1046 0 0]
+    }
+    dst {
+      id		      100
+      intersection	      [2 0.9979 -0.0653 0 2753.2426 2273.6903 0 0]
+    }
+    midPoint		    [3220.124 2243.1362]
+    chart		    2
+    dataLimits		    [2753.243 3679.022 2213.105 2275.563]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    315
+    linkNode		    [2 110 112]
+  }
+  transition {
+    id			    112
+    labelString		    ""
+    labelPosition	    [2746.258 2247.973 0 0]
+    fontSize		    12
+    src {
+      id		      26
+      intersection	      [3 0 1 0.628 2746.2575 2236.7984 0 0]
+    }
+    dst {
+      id		      100
+      intersection	      [1 0 -1 0 2746.2575 2267.1474 0 0]
+    }
+    midPoint		    [2746.2575 2247.9729]
+    chart		    2
+    dataLimits		    [2743.858 2748.658 2236.798 2267.147]
+    subviewer		    2
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    313
+    linkNode		    [2 111 0]
+  }
+  instance {
+    id			    113
+    machine		    1
+    name		    "SupervisorChart"
+    chart		    2
+  }
+  target {
+    id			    114
+    machine		    1
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    linkNode		    [1 0 115]
+  }
+  target {
+    id			    115
+    machine		    1
+    name		    "rtw"
+    linkNode		    [1 114 0]
+  }
+}

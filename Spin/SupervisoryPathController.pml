@@ -492,7 +492,7 @@ run NominalTrajectoryPlanner();
 
 /* We shall always be able to reach one of the end states. Otherwise we're in a deadlock. */
 /* Liveness */
-ltl noDeadlocks { []<>(state == GOAL_POSITION) || <>[](state == EMERGENCY_STOP) || <>[](state == SAFE_STOP) }
+ltl missionComplete { []<>(state == GOAL_POSITION) || <>[](state == EMERGENCY_STOP) || <>[](state == SAFE_STOP) }
 
 /* At some point in time, we shall stop and be stationary forever. */
 /* Liveness */
@@ -533,6 +533,7 @@ ltl unsafeStop { [](state == EMERGENCY_STOP -> ((
                    || (!second_UPP_success && second_UPP_requested))
                    && (!SSMP_success && SSMP_requested))) }
                    
+/* Liveness */
 ltl failure { []((sensorFailure && !(egoPosition >= distanceToGoalPosition)) -> <>(state == SAFE_STOP || state == EMERGENCY_STOP)) }
 
 /*

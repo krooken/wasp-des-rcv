@@ -1,6 +1,6 @@
 # wasp-des-rcv
 
-Complimentary PROMELA and Stateflow models for the [article](https://research.chalmers.se/publication/509469) named 'Design and Formal Verification of a Safe Stop Supervisor for an Automated Vehicle' by Jonas Krook, Lars Svensson, Yuchao Li, Lei Feng, and Martin Fabian.
+Complimentary PROMELA and Stateflow models for the [article](https://research.chalmers.se/publication/509469) named 'Design and Formal Verification of a Safe Stop Supervisor for an Automated Vehicle' by Jonas Krook, Lars Svensson, Yuchao Li, Lei Feng, and Martin Fabian. A video demonstrating the work can be found on [Vimeo](https://vimeo.com/319427372).
 
 ## Spin
 
